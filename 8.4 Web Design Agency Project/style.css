@@ -12,6 +12,17 @@ body {
 
 h1 {
   font-size: 5rem;
+  display: inline;
+}
+
+.logo {
+  display: block;
+}
+
+.creative {
+    color: midnightblue;
+    font-size: 5rem;
+    font-weight: bolder;
 }
 
 footer {
@@ -19,3 +30,48 @@ footer {
   color: midnightblue;
 }
 
+.tile-image {
+  float: left;
+  height: 200px;
+  margin-right: 50px;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.card {
+  display: inline;
+  width: 45%;
+}
+
+@media (max-width: 680px) {
+  h1 {
+    font-size: 3.5rem;
+    text-align: center;
+  }
+
+  .left {
+    clear: left;
+  }
+
+  .right {
+    clear: left;
+  }
+
+  .card {
+    display: block;
+    width: 100%;
+  }
+
+  .tile-image {
+    clear: both;
+    height: 100%;
+    margin-right: 50px;
+    max-width: 100%; 
+  }
+}
