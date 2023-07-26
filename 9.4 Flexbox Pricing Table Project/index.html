@@ -11,9 +11,27 @@
       font-family: 'Sono', sans-serif;
     }
 
+    .pricing-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      gap: 50px;
+    }
+
+    .pricing-plan {
+      background-color: #f2f2f2;
+      justify-content: center;
+      width: 400px;
+      flex: 1;
+    }
+
     /* Hint: What can you do with a media query and flexbox? */
     @media (max-width: 1250px) {
-      
+      .pricing-container{
+        flex-direction: column;
+        align-items: center;
+        
+      }
     }
   </style>
 </head>
