@@ -19,11 +19,103 @@
     HINT: Remember you can't change the properties of grid lines.
     But grid lines are transparent!
     */
+    .container {
+      background-color: #000;
+      width: 748px;
+      height: 748px;
+      display: grid;
+      grid-template: 414px 325px / 320px 419px;
+      gap: 9px 9px;
+    }
+
+    .third {
+      display: grid;
+      background-color: #000;
+      grid-template-rows: 296px 20px;
+      gap: 9px;
+    }
+
+    .fourth {
+      display: grid;
+      background-color: #000;
+      grid-template-columns: 360px 50px;
+      gap: 9px;
+    }
+
+    .red {
+      background-color: #E72F24;
+    }
+
+    .white  {
+      background-color: #F0F1EC;
+    }
+
+    .black {
+      background-color: #232629;
+    }
+
+    .blue {
+      background-color: #004592;
+    }
+
+    .yellow {
+      background-color: #F9D01E;
+    }
+
+    .left {
+      display: grid;
+      background-color: #000;
+      grid-template-rows: 296px 20px;
+      gap: 9px;
+    }
+
+    .below {
+      display: grid;
+      background-color: #000;
+      grid-template-columns: 198px 153px;
+      gap: 9px;
+    }
+
+    .right {
+      display: grid;
+      background-color: #000;
+      grid-template-rows: 130px 186px;
+      gap: 9px;
+    }
+
+    .right > .blue {
+      border-bottom: 10px solid #000;
+    }
+
+
   </style>
 </head>
 
 <body>
   <!-- Write your HTML here -->
+
+    <div class="container">
+      <div class="red"></div>
+      <div class="white"></div>
+      <div class="third">
+        <div class="white"></div>
+        <div class="white"></div>
+      </div>
+      <div class="fourth">
+        <div class="left white">
+          <div class="white"></div>
+          <div class="below">
+            <div class="yellow"></div>
+            <div class="black"></div>
+          </div>
+        </div>
+        <div class="right white">
+          <div class="blue"></div>
+          <div class="white"></div>
+        </div>
+      </div>
+    </div>
+
 </body>
 
 </html>
