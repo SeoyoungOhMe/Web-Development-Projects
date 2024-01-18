@@ -4,44 +4,45 @@
 3. Create a txt file to save the user input using the native fs node module.
 */
 
-
 import inquirer from 'inquirer';
+//import readline from 'readline';
+import qr from 'qr-image'; // var qr = require('qr-image');
+import fs from "fs";
 
 inquirer
   .prompt([
     /* Pass your questions in here */
-    console.log("Enter URL.")
+    {
+      type : 'input',
+      name : 'url',
+      message : 'Write : '
+    }
   ])
   .then((answers) => {
     // Use user feedback for... whatever!!
+    //console.log(typeof(answers)); // object
+    const url = answers.url;
+    var qr_svg = qr.image(url, { type: 'png' });
+    qr_svg.pipe(fs.createWriteStream('i_love_qr.png'));
+    
+    var svg_string = qr.imageSync('I love QR!', { type: 'png' });
+
+    fs.writeFile("message.txt", url, (err) => {
+      if (err) throw err;
+      console.log('The file has been saved!');
+    });
+
   })
   .catch((error) => {
     if (error.isTtyError) {
       // Prompt couldn't be rendered in the current environment
-      console.log('TtyError!');
+      console.log("error1");
     } else {
       // Something else went wrong
-      console.log('Other Error!');
-
+      console.log("error2");
     }
   });
 
 
 
 
-  var qr = require('qr-image');
- 
-  var qr_svg = qr.image('I love QR!', { type: 'svg' });
-  qr_svg.pipe(require('fs').createWriteStream('i_love_qr.svg'));
-   
-  var svg_string = qr.imageSync('I love QR!', { type: 'svg' });
-
-
-
-
-  import { watchFile } from 'node:fs';
-
-  watchFile('message.text', (curr, prev) => {
-    console.log(`the current mtime is: ${curr.mtime}`);
-    console.log(`the previous mtime was: ${prev.mtime}`);
-  });
