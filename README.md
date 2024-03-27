@@ -12,4 +12,7 @@ https://www.appbrewery.co/p/web-development-course-resources
 - Bootstrap [11]
 - Node.js [23]
 - Express.js [24]
+- APIs [28]
+- Build Your Own API [30]
+- PostgreSQL [33]
 - React.js [36]
